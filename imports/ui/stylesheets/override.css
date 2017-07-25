@@ -1,0 +1,68 @@
+/* Kezdőlap */
+h2.kezdo, h2.kezdojobb, hk.kezdobal {
+    display: block;
+	font-size: calc(0.55em + 3vmin);
+    text-align: center;
+    font-weight: bold;
+	margin-bottom: 0.2em;
+}
+
+h2.kezdojobb {
+    display: block;
+	float: right;
+}
+
+h2.kezdobal {
+    display: block;
+	float: left;
+}
+
+ul.kezdo, ul.kezdojobb, ul.kezdobal {
+	display: block;
+	float: left;
+	list-style-type: none;
+	font-size: calc(0.55em + 3vmin);
+	font-weight: bold;
+	margin-bottom: 0.4em;
+}
+
+ul.kezdojobb {
+    display: block;
+	float: left;
+	margin-left: calc(0em + 1vmin) 
+}
+
+ul.kezdobal {
+    display: block;
+	float: left;
+	overflow: hidden;
+}
+
+p.kezdo {
+    font-size: calc(0.55em + 2vmin);
+    text-align: center;
+    font-weight: bold;
+	color:red;
+	margin-bottom: 0.3em;
+}
+button.fomenu, button.valaszthato{
+	background-color: #008CBA;
+    border: none;
+    color: white;
+    padding-left: 0.25em;
+	padding-right:0.25em;
+	padding-top: 0.15em;
+	padding-bottom: 0.15em;
+	border-radius: 0.25em;
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: calc(0.75em + 2vmin);
+}
+
+button.valaszthato{
+	background-color: #009933;
+}
+

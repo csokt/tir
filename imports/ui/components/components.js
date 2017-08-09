@@ -8,6 +8,14 @@ import './components.html'
 import '../stylesheets/table.css'
 import '../stylesheets/override.css'
 
+//############################################################################################################################  hello  ###
+//#############################################################################  events  ###
+Template.hello.events({
+  'click #logout'(event, self) {
+    Session.set('user', undefined)
+  },
+})
+
 //############################################################################################################################  login  ###
 Template.login.onCreated(function () {
   this.autorun(function() {

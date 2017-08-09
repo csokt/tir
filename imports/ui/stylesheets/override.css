@@ -19,18 +19,14 @@ h2.kezdobal {
 
 ul.kezdo, ul.kezdojobb, ul.kezdobal {
 	display: block;
-	float: left;
+	margin-left: auto;
+    margin-right: auto;
 	list-style-type: none;
 	font-size: calc(0.55em + 3vmin);
 	font-weight: bold;
 	margin-bottom: 0.4em;
 }
 
-ul.kezdojobb {
-    display: block;
-	float: left;
-	margin-left: calc(0em + 1vmin) 
-}
 
 ul.kezdobal {
     display: block;
@@ -45,24 +41,61 @@ p.kezdo {
 	color:red;
 	margin-bottom: 0.3em;
 }
-button.fomenu, button.valaszthato{
-	background-color: #008CBA;
-    border: none;
+button.alap, button.zold, button.szurke, button.login, button.piros, form.kamera button.btn-primary, button.nextkamera{
+	background-color: #1e83c3;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	border: none;
     color: white;
-    padding-left: 0.25em;
-	padding-right:0.25em;
-	padding-top: 0.15em;
-	padding-bottom: 0.15em;
-	border-radius: 0.25em;
+    padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	border-radius: 0.4em;
 	margin-top: 0.25em;
 	margin-bottom: 0.25em;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: calc(0.75em + 2vmin);
+	font-weight: bold;	
 }
-
-button.valaszthato{
+button.login{
+	background-color: red;
+}
+button.zold{
 	background-color: #009933;
 }
 
+button.szurke{
+	background-color: gray;
+}
+
+button.piros{
+	background-color: red;
+}
+
+button.nextkamera{
+
+}
+
+p.kamera {
+    font-size: calc(0.55em + 2vmin);
+    text-align: center;
+    font-weight: bold;
+	color:red;
+	margin-bottom: 0.3em;
+}
+form#qrform.form-inline{
+	margin-left: auto;
+    margin-right: auto;
+}
+
+video.kamera {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	margin-top: 1em;
+	width: calc(15em + 35vmin)    !important;
+	height: auto   !important;
+}

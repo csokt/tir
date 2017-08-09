@@ -7,8 +7,8 @@ Schema = {}
 
 Schema.qr = new SimpleSchema({
   code: {
-    type: String,
-    label: "Kézi adatbevitel",
+    type: Number,
+    label: "Kézi adatbevitel:",
   },
 })
 

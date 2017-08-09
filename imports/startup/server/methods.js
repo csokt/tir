@@ -113,6 +113,7 @@ Meteor.methods({
 
   pubKodolas(doc) {
     log.info(doc, 'kódol')
+    doc.funkcio = 99994
     doc.createdAt = new Date()
     const id  = Kodolasok.insert(doc)
     doc.id    = id

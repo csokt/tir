@@ -1,19 +1,18 @@
 <!--############################################################################################################################  hello  ###-->
 <template name="hello">
-  <h2 class=kezdo>Termelés Információs Rendszer</h2>
+ <h2 class=kezdo>Termelés Információs Rendszer</h2> 
   {{#if logged}}
-    <p class=kezdo>Üdvözöllek {{user.name}}! Szerepköröd: {{user.role}}</p>
+    <p class=kezdo>Üdvözlöm {{user.name}}! Szerepköre: {{user.role}}</p>
   {{/if}}
-    <ul class=kezdobal>
-    <li class=kezdobal> Főmenü:</li>
-    <li class=kezdobal> <a href="/tv"><button class=fomenu>Televíziós megjelenítés</button></a> </li>
-    <li class=kezdobal> <a href="/tablet"><button class=fomenu>Tabletes lekérdezés</button></a> </li>
-    {{#if kodolhat}}
-      <li> <a href="/kodol"><button class=fomenu>Teljesítmény kódolás</button></a> </li>
-    {{/if}}
-    <li class=kezdobal><a href="/scanner/server"><button class=fomenu> Vonalkód olvasó szerver</button></a></li>
-    <li class=kezdobal> <a href="/scanner/client"><button class=fomenu>Vonalkód olvasó kliens</button></a> </li>
-  </ul>
+   {{#if logged}}
+<a href="/"><button id="logout" class=piros>Kijelentkezés</button></a>
+	   {{else}}
+	  <a href="/tablet"><button id="login" class=login>Bejelentkezés</button></a>
+	  {{/if}}
+<!--
+    <li class=kezdobal><a href="/scanner/server"><button class=szurke> Vonalkód olvasó szerver</button></a></li>
+    <li class=kezdobal> <a href="/scanner/client"><button class=szurke>Vonalkód olvasó kliens</button></a> </li>
+-->
 </template>
 
 <!--############################################################################################################################  logged  ###-->
@@ -27,7 +26,7 @@
 
 <!--############################################################################################################################  login  ###-->
 <template name="login">
-  <p>Jelentkezz be!</p>
+ <p class=kamera>Jelentkezzen be a kódkártyájával!</p>
   {{> qr defaultCameraIndex=0}}
 </template>
 
@@ -46,24 +45,21 @@
 <!--############################################################################################################################  qr  ###-->
 <template name="qr">
   {{#if nextcamera}}
-    <button type="button" id='nextcamera'>Következő kamera</button>
+   <button class="nextkamera" type="button" id='nextcamera'>Váltás az előlapi és hátlapi kamera között</button>
   {{/if}}
-  <br>
-  <video id="preview"></video>
-  {{> quickForm schema=Schema.qr doc=doc id="qrForm" type="normal" buttonContent="Ment"}}
+  <video class="kamera" id="preview"></video>
+  {{> quickForm schema=Schema.qr doc=doc id="qrForm" template="bootstrap3-inline" type="normal" buttonContent="Ment"}}
   {{scanmessage}}
 </template>
 
 <!--############################################################################################################################  view_list  ###-->
 <template name="view_list">
-   <ul class=kezdojobb>
-  Választható lekérdezések:
+       {{#if kodolhat}}
+      <a href="/kodol"><button class=alap>Teljesítmény kódolás</button></a>
+    {{/if}}
     {{#each view in views}}
-      <li>
-        <a href={{path view}}><button class=valaszthato>{{view.label}}</button></a>
-      </li>
+        <a href={{path view}}><button class=zold>{{view.label}}</button></a>
     {{/each}}
-  </ul>
 </template>
 
 <!--############################################################################################################################  table  ###-->

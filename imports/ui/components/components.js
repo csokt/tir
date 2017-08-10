@@ -12,7 +12,8 @@ import '../stylesheets/override.css'
 //#############################################################################  events  ###
 Template.hello.events({
   'click #logout'(event, self) {
-    Session.set('user', undefined)
+    window.location.reload()
+//    Session.set('user', undefined)
   },
 })
 

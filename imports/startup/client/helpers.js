@@ -20,6 +20,11 @@ Template.registerHelper('kodolhat', function(){
 //  return user && user.role == 'kódoló'
 //})
 
+Template.registerHelper('kodolo', function(){
+  user = Session.get('user')
+  return user && user.role == 'kódoló'
+})
+
 Template.registerHelper('dolgozo', function(){
   user = Session.get('user')
   return user && user.role != 'kódoló' || Session.get('dolgozokod')

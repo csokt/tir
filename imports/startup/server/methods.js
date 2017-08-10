@@ -6,13 +6,15 @@ import mqtt from 'mqtt'
 
 const TopicBase = 'tir/dama/kodol/'
 const client = mqtt.connect('mqtt://192.168.0.8')
-client.subscribe(TopicBase+'+')
+client.subscribe(TopicBase+'response')
+//client.subscribe('#')
 
 client.on('message', function (topic, message) {
   try {
     const doc = JSON.parse(message.toString())
 //    console.log(topic)
 //    console.log(doc)
+    Kodolasok.rawCollection().update({'_id':doc.id},{$set:{'eredmeny':doc.message}})
   } catch (err) {
     log.error(err)
   }
@@ -119,10 +121,10 @@ Meteor.methods({
     doc.id    = id
     const msg = JSON.stringify(doc)
     client.publish(TopicBase+'request', msg)
-    Meteor.setTimeout(() => {
-      eredmeny = Math.random() > 0.3 ? 'OK' : 'Hiba'
-      Kodolasok.update({'_id':id},{$set:{'eredmeny':eredmeny}})
-    }, Math.random()*2000)
+//    Meteor.setTimeout(() => {
+//      eredmeny = Math.random() > 0.3 ? 'OK' : 'Hiba'
+//      Kodolasok.update({'_id':id},{$set:{'eredmeny':eredmeny}})
+//    }, Math.random()*2000)
   },
 
   delKodolasok(belepokod) {

@@ -8,7 +8,7 @@ log = bunyan.createLogger({
     level: 'debug',
     streams: [{
         type: 'rotating-file',
-        path: '/home/tibor/tir.log',
+        path: '/home/administrator/tir.log',
         period: '1d',
         count: 3
     }]

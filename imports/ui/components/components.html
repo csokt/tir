@@ -1,13 +1,13 @@
 <!--############################################################################################################################  hello  ###-->
 <template name="hello">
- <h2 class=kezdo>Termelés Információs Rendszer</h2> 
+ <h2 class=kezdo>Termelés Információs Rendszer</h2>
   {{#if logged}}
     <p class=kezdo>Üdvözlöm {{user.name}}! Szerepköre: {{user.role}}</p>
   {{/if}}
-   {{#if logged}}
-<a href="/"><button id="logout" class=piros>Kijelentkezés</button></a>
-	   {{else}}
-	  <a href="/tablet"><button id="login" class=login>Bejelentkezés</button></a>
+    {{#if logged}}
+      <a href="/"><button id="logout" class=piros>Kijelentkezés</button></a>
+	  {{else}}
+	   <a href="/tablet"><button id="login" class=login>Bejelentkezés</button></a>
 	  {{/if}}
 <!--
     <li class=kezdobal><a href="/scanner/server"><button class=szurke> Vonalkód olvasó szerver</button></a></li>
@@ -50,6 +50,7 @@
   <video class="kamera" id="preview"></video>
   {{> quickForm schema=Schema.qr doc=doc id="qrForm" template="bootstrap3-inline" type="normal" buttonContent="Ment"}}
   {{scanmessage}}
+  <button onclick="window.history.go(-1)">Vissza</button>
 </template>
 
 <!--############################################################################################################################  view_list  ###-->
@@ -69,6 +70,7 @@
     <span>Felhasználó: {{user.name}}</span>
     <span>{{result.rowcount}} tétel</span>
     <button id="isFilter">Szűrő</button>
+    <button onclick="window.history.go(-1)">Vissza</button>
   {{/if}}
 
   {{#if isFilter}}

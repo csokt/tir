@@ -77,6 +77,7 @@ Template.App_scanner.helpers({
 })
 
 //############################################################################################################################  App_kodol  ###
+//#############################################################################  functions  ###
 AutoForm.hooks({
   kodolForm: {
     onSubmit: function (doc) {
@@ -90,6 +91,7 @@ AutoForm.hooks({
   }
 })
 
+//#############################################################################  onCreated  ###
 Template.App_kodol.onCreated(function () {
   var self = this
   const user = Session.get('user')
@@ -102,6 +104,7 @@ Template.App_kodol.onCreated(function () {
   self.mennyiseg  = new ReactiveVar(false)
 })
 
+//#############################################################################  helpers  ###
 Template.App_kodol.helpers({
   munkalap: function () {
     return Session.get('munkalap')
@@ -115,3 +118,16 @@ Template.App_kodol.helpers({
     return Kodolasok.find({ belepokod: { $eq: Session.get('user').belepokod } }, {sort: {'createdAt': -1}})
   },
 })
+
+//#############################################################################  events  ###
+Template.App_kodol.events({
+  'click #ujMunkalap'(event, self) {
+    Session.set('munkalap', false)
+  },
+
+  'click #ujDolgozo'(event, self) {
+    Session.set('dolgozokod', false)
+    Session.set('munkalap', false)
+  },
+})
+

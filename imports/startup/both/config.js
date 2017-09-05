@@ -32,6 +32,65 @@ views:
   - name:     Hibák száma
   - name:     Hátralék
     label:    Gyártandó
+-
+  id:         vasaloleadas_tv
+  name:       monitor_szegedvasaloleadas
+  label:      Szeged vasaló napi leadás
+  device:     tv
+  refresh:    300
+  where:
+  order:      '[Cikk/IT]'
+  head_after: 40
+  limit:      20
+  sum:
+  - Rendelt db
+  - Előzőleg leadott db
+  - Leadott db
+  - Hibák száma
+  - Hátralék
+  fields:
+  - name:     Cikk/IT
+  - name:     Megnevezés
+  - name:     Megrendelő
+  - name:     Rendelt db
+    label:    Rendelt
+  - name:     Előzőleg leadott db
+    label:    Előzőleg leadott
+  - name:     Leadott db
+    label:    Ma leadott
+  - name:     Hibák száma
+  - name:     Hátralék
+    label:    Gyártandó
+	
+-
+  id:         szabaszatleadas_tv
+  name:       monitor_szegedszabaszatleadas
+  label:      Szeged szabászat napi leadás
+  device:     tv
+  refresh:    300
+  where:
+  order:      '[Cikk/IT]'
+  head_after: 40
+  limit:      20
+  sum:
+  - Rendelt db
+  - Előzőleg leadott db
+  - Leadott db
+  - Hibák száma
+  - Hátralék
+  fields:
+  - name:     Cikk/IT
+  - name:     Megnevezés
+  - name:     Megrendelő
+  - name:     Rendelt db
+    label:    Rendelt
+  - name:     Előzőleg leadott db
+    label:    Előzőleg leadott
+  - name:     Leadott db
+    label:    Ma leadott
+  - name:     Hibák száma
+  - name:     Hátralék
+    label:    Gyártandó
 
 -
   id:         fonalstatusz

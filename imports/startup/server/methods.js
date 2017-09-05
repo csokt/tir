@@ -5,7 +5,7 @@ import { mssql } from '../../startup/server/initdb.js'
 import mqtt from 'mqtt'
 
 const TopicBase = 'tir/dama/kodol/'
-const client = mqtt.connect('mqtt://192.168.0.8')
+const client = mqtt.connect('mqtt://192.168.0.30', {username:'admin', password:'Szefo1953'})
 client.subscribe(TopicBase+'response')
 //client.subscribe('#')
 
@@ -14,7 +14,7 @@ client.on('message', function (topic, message) {
     const doc = JSON.parse(message.toString())
 //    console.log(topic)
 //    console.log(doc)
-    Kodolasok.rawCollection().update({'_id':doc.id},{$set:{'eredmeny':doc.message}})
+    Kodolasok.rawCollection().update({'_id':doc.id},{$set:{'eredmeny':doc.result}})
   } catch (err) {
     log.error(err)
   }
